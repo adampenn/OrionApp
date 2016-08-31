@@ -1,9 +1,17 @@
+<!DOCTYPE html>
 <html>
   <head>
     <script src="components/angular.min.js"></script>
     <script src="components/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/news.js"></script>
   </head>
   <body>
-    <div ui-view></div>
-  </body
+    <div ng-app='orionApp' ng-controller='AppCtrl'> 
+      {{ 'my name is ' + name }}
+      <a ui-sref='news'>news</a>
+      <a ui-sref='opinion'>opinion</a>
+      <div ui-view>hello</div>
+    </div>
+  </body>
 </html>

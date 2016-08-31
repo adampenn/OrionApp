@@ -1,11 +1,29 @@
-app = angular.module('orionApp', ['ui-view']);
+app = angular.module('orionApp', [
+  'ui.router',
+  'orionApp.news'
+]);
 
-app.controller('OrionAppController', ['$scope', '$stateProvider', '$urlRouterProvider', function($scope, $stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('news');
+app.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/news');
   $stateProvider
     .state('news', {
-      url: '/news'
-      templateUrl: 'public/partials/news.html'
+      url: '/news',
+      views: {
+        '': {
+          templateUrl: 'views/news.html'
+        },
+        'breaking@news': {
+          templateUrl: 'public/partials/news_breaking.html'
+        }
+      }
     })
-    .state('news'
-}]);
+    .state('opinion', {
+      url: '/opinion',
+      templateUrl: 'views/opinion.html'
+});
+
+});
+
+app.controller('AppCtrl', function($scope) {
+  $scope.name = "adam";
+});
