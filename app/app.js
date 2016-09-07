@@ -1,6 +1,7 @@
 app = angular.module('orionApp', [
   'ui.router',
-  'orionApp.news'
+  'orionApp.news',
+  'orionApp.opinion'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
