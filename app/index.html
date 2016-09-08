@@ -23,112 +23,89 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" href="#">Orion</a>
         </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-				 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">BREAKING NEWS</a></li>
-            <li><a href="#">CAMPUS</a></li>
-            <li><a href="#">ADMINISTRATION</a></li>
-					  <li><a href="#">COMMUNITY</a></li>
-         		<li><a href="#">CRIME</a></li>
-					  <li><a href="#">POLICE BLOTTER</a></li>
-          </ul>
-        </li>
-			 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OPINION<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">BLOGS</a></li>
-            <li><a href="#">COLUMNS</a></li>
-            <li><a href="#">COMIC STRIP</a></li>
-					  <li><a href="#">EDITORIAL ILLUSTRATIONS</a></li>
-         		<li><a href="#">EDITORIALS</a></li>
-					  <li><a href="#">TWEET TALKS</a></li>
-          </ul>
-        </li>
-				 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPORTS<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">BASEBALL</a></li>
-            <li><a href="#">BASKETBALL</a></li>
-            <li><a href="#">CROSS COUNTRY</a></li>
-					  <li><a href="#">GOLF</a></li>
-         		<li><a href="#">SOCCER</a></li>
-					  <li><a href="#">SOFTBALL</a></li>
-						<li><a href="#">TRACK AND FIELD</a></li>
-					 	<li><a href="#">VOLLEYBALL</a></li>
-
-
-          </ul>
-        </li>
-				 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">PHOTO OF THE DAY</a></li>
-            <li><a href="#">PREVIEWS</a></li>
-            <li><a href="#">Q&As</a></li>
-					  <li><a href="#">REVIEWS</a></li>
-         		<li><a href="#">NEBULA</a></li>
-          </ul>
-        </li>
-    		<li class="active"><a href="#">CALENDAR<span class="sr-only">(current)</span></a></li>
-				 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">PHOTO GALARIES</a></li>
-            <li><a href="#">PRINT EDITION</a></li>
-            <li><a href="#">SPECIAL SECTIONS</a></li>
-					  <li><a href="#">VIDEO</a></li>
-          </ul>
-        </li>
-				 <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">ORION ADVERTISING</a></li>
-            <li><a href="#">DONATE</a></li>
-            <li><a href="#">STAFF</a></li>
-					  <li><a href="#">APPLY</a></li>
-					  <li><a href="#">WHERE TO FIND THE ORION</a></li>
-					  <li><a href="#">CONTACT US</a></li>
-					  <li><a href="#">ARCHIVES</a></li>
-					  <li><a href="#">STYLEBOOK</a></li>
-          </ul>
-        </li>
-     		<li class="active"><a href="#">CLASSIFIEDS<span class="sr-only">(current)</span></a></li>
-				
-				
-
-
-
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->  
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+	    <li class="dropdown">
+              <a ui-sref="news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a ui-sref="news">ALL NEWS</a></li>
+                <li><a href="#">BREAKING NEWS</a></li>
+                <li><a href="#">CAMPUS</a></li>
+                <li><a href="#">ADMINISTRATION</a></li>
+	        <li><a href="#">COMMUNITY</a></li>
+                <li><a href="#">CRIME</a></li>
+                <li><a href="#">POLICE BLOTTER</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a ui-sref="opinion" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OPINION<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a ui-sref="opinion">ALL OPINION</a></li>
+                <li><a href="#">BLOGS</a></li>
+                <li><a href="#">COLUMNS</a></li>
+                <li><a href="#">COMIC STRIP</a></li>
+                <li><a href="#">EDITORIAL ILLUSTRATIONS</a></li>
+                <li><a href="#">EDITORIALS</a></li>
+                <li><a href="#">TWEET TALKS</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPORTS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">BASEBALL</a></li>
+                <li><a href="#">BASKETBALL</a></li>
+                <li><a href="#">CROSS COUNTRY</a></li>
+                <li><a href="#">GOLF</a></li>
+                <li><a href="#">SOCCER</a></li>
+                <li><a href="#">SOFTBALL</a></li>
+		<li><a href="#">TRACK AND FIELD</a></li>
+		<li><a href="#">VOLLEYBALL</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a ui-sref="ae">ALL A AND E</a></li>
+                <li><a href="#">PHOTO OF THE DAY</a></li>
+                <li><a href="#">PREVIEWS</a></li>
+                <li><a href="#">Q&As</a></li>
+                <li><a href="#">REVIEWS</a></li>
+                <li><a href="#">NEBULA</a></li>
+              </ul>
+            </li>
+            <li><a href="#">CALENDAR<span class="sr-only">(current)</span></a></li>
+	      <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">PHOTO GALARIES</a></li>
+                <li><a href="#">PRINT EDITION</a></li>
+                <li><a href="#">SPECIAL SECTIONS</a></li>
+                <li><a href="#">VIDEO</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">ORION ADVERTISING</a></li>
+                <li><a href="#">DONATE</a></li>
+                <li><a href="#">STAFF</a></li>
+                <li><a href="#">APPLY</a></li>
+                <li><a href="#">WHERE TO FIND THE ORION</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">ARCHIVES</a></li>
+                <li><a href="#">STYLEBOOK</a></li>
+              </ul>
+            </li>
+           <li><a href="#">CLASSIFIEDS<span class="sr-only">(current)</span></a></li>
+	</div><!-- /.navbar-collapse -->  
       </div>
-        </div>
-    <a ui-sref='news'>news</a>
-    <a ui-sref='opinion'>opinion</a>
+    </div>
+    <br>
+    <br>
+    <br>
     <div ui-view>hello</div>
   </body>
 </html>

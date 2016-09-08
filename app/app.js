@@ -7,6 +7,14 @@ app = angular.module('orionApp', [
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/news');
   $stateProvider
+    .state('ae', {
+      url: '/ae',
+      views: {
+        '': {
+          templateUrl: 'views/ae.html'
+        }
+      }
+    })
     .state('news', {
       url: '/news',
       views: {
@@ -21,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('opinion', {
       url: '/opinion',
       templateUrl: 'views/opinion.html'
-});
+    });
 
 });
 
