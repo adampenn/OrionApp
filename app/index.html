@@ -8,6 +8,7 @@
     <script src="app.js"></script>
     <script src="js/news.js"></script>
     <script src="js/opinion.js"></script>
+    <script src="js/ae.js"></script>
     <link rel="stylesheet" type="text/css" href="components/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="public/stylesheets/opinion.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +44,7 @@
             <li class="dropdown">
               <a ui-sref="opinion" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OPINION<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a ui-sref="opinion">ALL OPINION</a></li>
+                <li><a ui-ref="opinion">ALL OPINION</a></li>
                 <li><a href="#">BLOGS</a></li>
                 <li><a href="#">COLUMNS</a></li>
                 <li><a href="#">COMIC STRIP</a></li>
@@ -68,7 +69,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a ui-sref="ae">ALL A AND E</a></li>
+                <li><a ui-ref="ae">ALL A & E</a></li>
                 <li><a href="#">PHOTO OF THE DAY</a></li>
                 <li><a href="#">PREVIEWS</a></li>
                 <li><a href="#">Q&As</a></li>
@@ -106,6 +107,10 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <a ui-sref="opinion">ALL OPINION</a>
+    <a ui-sref="news">ALL NEWS</a>
     <div ui-view>hello</div>
   </body>
 </html>

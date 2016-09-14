@@ -1,7 +1,8 @@
 app = angular.module('orionApp', [
   'ui.router',
   'orionApp.news',
-  'orionApp.opinion'
+  'orionApp.opinion',
+  'orionApp.ae'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -34,5 +35,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 app.controller('AppCtrl', function($scope) {
-  $scope.name = "adam";
 });
