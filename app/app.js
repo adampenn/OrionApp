@@ -2,13 +2,23 @@ app = angular.module('orionApp', [
   'ui.router',
   'orionApp.news',
   'orionApp.opinion',
-  'orionApp.ae'
+  'orionApp.ae',
+  'orionApp.sports'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/news');
   $stateProvider
-    .state('ae', {
+    .state('sports', {
+      url: '/sports',
+      controller: 'SportsCtrl',
+      views: {
+        '': {
+          templateUrl: 'views/sports.html'
+        }
+      }
+    })
+   .state('ae', {
       url: '/ae',
       views: {
         '': {

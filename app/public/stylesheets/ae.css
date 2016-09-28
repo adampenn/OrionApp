@@ -62,6 +62,10 @@ h1, h2, h3 {
   color: #666;
 }
 
+.title {
+  color: black;
+}
+
 .desc {
   color: #333;
 }

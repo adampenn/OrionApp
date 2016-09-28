@@ -9,12 +9,13 @@
     <script src="js/news.js"></script>
     <script src="js/opinion.js"></script>
     <script src="js/ae.js"></script>
+    <script src="js/sports.js"></script>
     <link rel="stylesheet" type="text/css" href="components/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="public/stylesheets/opinion.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body ng-app='orionApp' ng-controller='AppCtrl'>
-    <div class='nav navbar-default navbar-fixed-top'>
+    <div class='nav navbar-default'>
       <div class='container-fluid'>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -30,87 +31,41 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
 	    <li class="dropdown">
-              <a ui-sref="news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a ui-sref="news">ALL NEWS</a></li>
-                <li><a href="#">BREAKING NEWS</a></li>
-                <li><a href="#">CAMPUS</a></li>
-                <li><a href="#">ADMINISTRATION</a></li>
-	        <li><a href="#">COMMUNITY</a></li>
-                <li><a href="#">CRIME</a></li>
-                <li><a href="#">POLICE BLOTTER</a></li>
-              </ul>
-            </li>
+              <a ui-sref="news" role="button">NEWS</a>
+           </li>
             <li class="dropdown">
-              <a ui-sref="opinion" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OPINION<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a ui-ref="opinion">ALL OPINION</a></li>
-                <li><a href="#">BLOGS</a></li>
-                <li><a href="#">COLUMNS</a></li>
-                <li><a href="#">COMIC STRIP</a></li>
-                <li><a href="#">EDITORIAL ILLUSTRATIONS</a></li>
-                <li><a href="#">EDITORIALS</a></li>
-                <li><a href="#">TWEET TALKS</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPORTS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">BASEBALL</a></li>
-                <li><a href="#">BASKETBALL</a></li>
-                <li><a href="#">CROSS COUNTRY</a></li>
-                <li><a href="#">GOLF</a></li>
-                <li><a href="#">SOCCER</a></li>
-                <li><a href="#">SOFTBALL</a></li>
-		<li><a href="#">TRACK AND FIELD</a></li>
-		<li><a href="#">VOLLEYBALL</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a ui-ref="ae">ALL A & E</a></li>
-                <li><a href="#">PHOTO OF THE DAY</a></li>
-                <li><a href="#">PREVIEWS</a></li>
-                <li><a href="#">Q&As</a></li>
-                <li><a href="#">REVIEWS</a></li>
-                <li><a href="#">NEBULA</a></li>
-              </ul>
-            </li>
+              <a ui-sref="opinion" role="button">OPINION</a>
+           </li>
+            <li>
+              <a ui-sref="sports" role="button">SPORTS</a>
+           </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E</a>
+           </li>
             <li><a href="#">CALENDAR<span class="sr-only">(current)</span></a></li>
-	      <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">PHOTO GALARIES</a></li>
-                <li><a href="#">PRINT EDITION</a></li>
-                <li><a href="#">SPECIAL SECTIONS</a></li>
-                <li><a href="#">VIDEO</a></li>
-              </ul>
-            </li>
+	      <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
+           </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">ORION ADVERTISING</a></li>
-                <li><a href="#">DONATE</a></li>
-                <li><a href="#">STAFF</a></li>
-                <li><a href="#">APPLY</a></li>
-                <li><a href="#">WHERE TO FIND THE ORION</a></li>
-                <li><a href="#">CONTACT US</a></li>
-                <li><a href="#">ARCHIVES</a></li>
-                <li><a href="#">STYLEBOOK</a></li>
-              </ul>
-            </li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
+           </li>
            <li><a href="#">CLASSIFIEDS<span class="sr-only">(current)</span></a></li>
 	</div><!-- /.navbar-collapse -->  
       </div>
     </div>
+    <div class="navbar navbar-inverse" role="navigation"> 
+      <ul class="nav navbar-nav"> 
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
+        </li> |
+	<li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
+        </li>
+      </ul>
+    </div> 
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <a ui-sref="opinion">ALL OPINION</a>
-    <a ui-sref="news">ALL NEWS</a>
-    <div ui-view>hello</div>
+    <div ui-view>this shows if ui router is not functioning</div>
   </body>
 </html>
