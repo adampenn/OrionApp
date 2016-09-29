@@ -4,13 +4,12 @@
 </head>
 <div id="stories" ng-controller='SportsCtrl'>
   <div class="story" ng-repeat='story in stories'>
-    <h2 class="title">{{story.title.rendered}}</h2>
+    <h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
     <p class="byline"><a ng-href={{story.link}}>Matthew Manfredi</a></p>
     <p class="date">{{story.date}}</p>
-    <p class="desc">{{story.excerpt.rendered}}</p>
+    <p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
   </div>
 </div>
-<h1>TITS</h1>
 <div id="footer"><br/>
   <p>&copy; 2016 The Orion</p>
   <p><a href="#">Privacy Policy</a></p><br/>
