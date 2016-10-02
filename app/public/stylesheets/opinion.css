@@ -5,6 +5,7 @@ body
 	color: white; 
 	background-color: rgb(128, 0, 0);
 }
+
 #title
 {
 	text-align:center; 
@@ -29,7 +30,20 @@ body
 	border: dotted 1px blue;
 	background-color: rgb(174, 185, 212);
 }
+#secondbarli 
+{
+	display: inline-block;
+}
 
+.secondbarul
+{
+	overflow-x: auto; 
+	width: 100%;
+	white-space: nowrap;
+}
+ul::-webkit-scrollbar {
+	display: none;
+}
 #article-details
 {
 	text-align: center;
