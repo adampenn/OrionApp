@@ -25,4 +25,4 @@ These instructions are for a Linux system if you have Windows or OSX just make s
 ..* This should include NPM check by using *which npm* or *npm -v*
 ..* Check node with *which node* or *node- -v*
 2. Make sure you have Git installed
-3. Clone this repo and create a branch for you to work in.
+3. Install http-server (run it by: http-server app/)
