@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="components/angular.js"></script>
     <script src="components/angular-ui-router.min.js"></script>
     <script src="components/jquery.min.js"></script>
@@ -11,10 +12,11 @@
     <script src="js/ae.js"></script>
     <script src="js/sports.js"></script>
     <link rel="stylesheet" type="text/css" href="components/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="public/stylesheets/opinion.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body ng-app='orionApp' ng-controller='AppCtrl'>
+  <body ng-app='orionApp' ng-controller='OrionCtrl'>
     <div class='nav navbar-default'>
       <div class='container-fluid'>
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,74 +32,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="news">NEWS</a>
+            <li ng-repeat="section in sections">
+              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="{{section.link}}">{{section.name}}</a>
             </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="opinion">OPINION</a>
-            </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="sports">SPORTS</a>
-            </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="">A&E</a>
-            </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="">CALENDAR</a>
-            </li>
-	    <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="">MULTIMEDIA</a>
-            </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="">ABOUT</a>
-            </li>
-            <li>
-              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="">CLASSIFIEDS</a>
-	    </li>
 	  </ul>
 	</div><!-- /.navbar-collapse -->  
       </div>
     </div>
-    <div class="navbar navbar-inverse" role="navigation"> 
-      <ul  class="secondbarul nav navbar-nav"> 
-				<li  id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BREAKING NEWS</a> 
-				</li>
-				<li id="secondbarli">
-					| 
-				</li>
-	<li id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CAMPUS</a> 
-				</li>
-				<li id="secondbarli">
-					| 
-				</li>
-				<li id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMINISTRATION</a> 
-				</li>
-				<li id="secondbarli">
-					| 
-				</li>
-				<li id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COMMUNITY</a> 
-				</li>
-				<li id="secondbarli">
-					| 
-				</li>
-				<li id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CRIME</a> 
-				</li>
-				<li id="secondbarli">
-					| 
-				</li>
-				<li id="secondbarli">
-					<a href = "#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">POLICE BLOTTER</a> 
-				</li>
-      </ul>
-    </div> 
-    <br>
-    <br>
-    <br>
     <div ui-view>this shows if ui router is not functioning</div>
   </body>
 </html>

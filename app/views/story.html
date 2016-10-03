@@ -1,0 +1,8 @@
+<div id="stories">
+  <div class="story" ng-repeat='story in stories'>
+    <h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
+    <p class="byline"><a ng-href={{story.link}}>Matthew Manfredi</a></p>
+    <p class="date">{{story.date}}</p>
+    <p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
+  </div>
+</div>
