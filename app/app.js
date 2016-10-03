@@ -4,7 +4,6 @@ app = angular.module('orionApp', [
   'orionApp.opinion',
   'orionApp.ae',
   'orionApp.sports', 
-	'orionApp.calendar',
 	'orionApp.multimedia', 
 	'orionApp.about'
 ]);
@@ -62,11 +61,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
     })
-   	.state('calendar', {
+  /* 	.state('calendar', {
       url: '/calendar',
       controller: 'CalendarCtrl',
       templateUrl: 'views/section_nav.html'
-    })
+    }) */
     .state('multimedia', {
       url: '/multimedia',
       controller: 'MultimediaCtrl',
