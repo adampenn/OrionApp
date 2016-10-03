@@ -3,7 +3,10 @@ app = angular.module('orionApp', [
   'orionApp.news',
   'orionApp.opinion',
   'orionApp.ae',
-  'orionApp.sports'
+  'orionApp.sports', 
+	'orionApp.calendar',
+	'orionApp.multimedia', 
+	'orionApp.about'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -59,16 +62,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
     })
-    /*.state('calendar', {
+   	.state('calendar', {
       url: '/calendar',
-      controller: 'SportsCtrl',
+      controller: 'CalendarCtrl',
       templateUrl: 'views/section_nav.html'
-    })*/
+    })
     .state('multimedia', {
       url: '/multimedia',
       controller: 'MultimediaCtrl',
       templateUrl: 'views/section_nav.html'
     })
+	  .state('about', {
+      url: '/about',
+      controller: 'AboutCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+   
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',

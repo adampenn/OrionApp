@@ -3,28 +3,28 @@ app.controller('OpinionCtrl', function($scope) {
   $scope.subsection;
   $scope.subsections = [
     {
-      link: 'breaking',
-      name: 'BREAKING NEWS'
+      link: 'blogs',
+      name: 'BLOGS'
     },
     {
-      link: 'campus',
-      name: 'CAMPUS'
+      link: 'columns',
+      name: 'COLUMNS'
     },
     {
-      link: 'administration',
-      name: 'ADMINISTRATION'
+      link: 'comicStrip',
+      name: 'COMIC STRIP'
     },
     {
-      link: 'community',
-      name: 'COMMUNITY'
+      link: 'editiorialIllustration',
+      name: 'EDITORIAL ILLUSTRATION'
     },
     {
-      link: 'crime',
-      name: 'CRIME'
+      link: 'Editorials',
+      name: 'EDITORIALS'
     },
     {
-      link: 'policeBlotter',
-      name: 'POLICE BLOTTER'
+      link: 'tweetTalks',
+      name: 'TWEET TALKS'
     }
   ];
 });

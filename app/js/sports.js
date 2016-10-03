@@ -9,7 +9,37 @@ app.controller('SportsCtrl', function($scope, $http) {
     {
       link: 'basketball',
       name: 'BASKETBALL'
+    },
+	  {
+      link: 'crossCountry',
+      name: 'CROSS COUNTRY'
+    },
+	  {
+      link: 'golf',
+      name: 'GOLF'
+    },
+	  {
+      link: 'soccer',
+      name: 'SOCCER'
+    },
+	  {
+      link: 'softball',
+      name: 'SOFTBALL'
+    },	
+	  {
+      link: 'trackAndField',
+      name: 'TRACK AND FIELD'
+    },
+	  {
+      link: 'volleyball',
+      name: 'VOLLEYBALL'
     }
+
+
+
+
+
+
   ];
 
 /*  //baseball
