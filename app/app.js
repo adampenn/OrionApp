@@ -27,28 +27,33 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/story.html'
     })
     .state('news.administration', {
-      url: '/news/administration',
+      url: '/administration',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.community', {
-      url: '/news/comunity',
+      url: '/comunity',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.crime', {
-      url: '/news/crime',
+      url: '/crime',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.policeBlotter', {
-      url: '/news/policeBlotter',
+      url: '/policeBlotter',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('opinion', {
       url: '/opinion',
       controller: 'OpinionCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+    .state('opinion.blog', {
+      url: '/blog',
+      controller: 'BlogCtrl',
       templateUrl: 'views/section_nav.html'
     })
     .state('sports', {
@@ -61,11 +66,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
     })
-  /* 	.state('calendar', {
+   	.state('calendar', {
       url: '/calendar',
       controller: 'CalendarCtrl',
-      templateUrl: 'views/section_nav.html'
-    }) */
+      templateUrl: 'views/calendar.html'
+    })
     .state('multimedia', {
       url: '/multimedia',
       controller: 'MultimediaCtrl',
