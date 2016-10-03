@@ -1,0 +1,12 @@
+<div class="subsection-nav navbar navbar-inverse" role="navigation"> 
+  <ul class="nav navbar-nav"> 
+    <li ng-repeat="subsection in subsections">
+      <a ui-sref='{{subsection.link}}'>{{subsection.name}}</a>
+    </li>
+  </ul>
+</div> 
+<div ui-view>this shows if ui router is not functioning</div>
+<div id="footer"><br/>
+  <p>&copy; 2016 The Orion</p>
+  <p><a href="#">Privacy Policy</a></p><br/>
+</div>

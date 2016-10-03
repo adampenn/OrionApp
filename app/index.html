@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="components/angular.js"></script>
     <script src="components/angular-ui-router.min.js"></script>
     <script src="components/jquery.min.js"></script>
@@ -11,15 +12,16 @@
     <script src="js/ae.js"></script>
     <script src="js/sports.js"></script>
     <link rel="stylesheet" type="text/css" href="components/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="public/stylesheets/opinion.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body ng-app='orionApp' ng-controller='AppCtrl'>
+  <body ng-app='orionApp' ng-controller='OrionCtrl'>
     <div class='nav navbar-default'>
       <div class='container-fluid'>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -28,44 +30,15 @@
           <a class="navbar-brand" href="#">Orion</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-	    <li class="dropdown">
-              <a ui-sref="news" role="button">NEWS</a>
-           </li>
-            <li class="dropdown">
-              <a ui-sref="opinion" role="button">OPINION</a>
-           </li>
-            <li>
-              <a ui-sref="sports" role="button">SPORTS</a>
-           </li>
-            <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A&E</a>
-           </li>
-            <li><a href="#">CALENDAR<span class="sr-only">(current)</span></a></li>
-	      <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
-           </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
-           </li>
-           <li><a href="#">CLASSIFIEDS<span class="sr-only">(current)</span></a></li>
+            <li ng-repeat="section in sections">
+              <a data-toggle="collapse" data-target="#navbar-collapse.in" ui-sref="{{section.link}}">{{section.name}}</a>
+            </li>
+	  </ul>
 	</div><!-- /.navbar-collapse -->  
       </div>
     </div>
-    <div class="navbar navbar-inverse" role="navigation"> 
-      <ul class="nav navbar-nav"> 
-        <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
-        </li> |
-	<li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MULTIMEDIA</a>
-        </li>
-      </ul>
-    </div> 
-    <br>
-    <br>
-    <br>
     <div ui-view>this shows if ui router is not functioning</div>
   </body>
 </html>

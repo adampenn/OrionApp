@@ -89,3 +89,22 @@ a {
 #footer a {
   color: black;
 }
+
+.subsection-nav {
+  overflow: hidden;
+}
+.subsection-nav ul {
+  overflow-x: auto; 
+  width: 100%;
+  justify-content: space-between;
+  margin-left: -1px;
+  white-space: nowrap;
+}
+.subsection-nav li {
+  text-align: center;
+  border-left: 1px solid #fff;
+  display: inline-block;
+}
+ul::-webkit-scrollbar {
+	display: none;
+}
