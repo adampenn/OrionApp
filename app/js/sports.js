@@ -36,7 +36,7 @@ app.controller('SportsCtrl', function($scope, $http) {
           url: imageJSON
         })
         .then(function successCallback(response) {
-          $scope.baseball[i].featuredPhoto = response.data.source_url;
+          $scope.stories[i].featuredPhoto = response.data.source_url;
         });
       })(stories, i);
     }
