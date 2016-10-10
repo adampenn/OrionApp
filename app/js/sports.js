@@ -1,6 +1,25 @@
 app = angular.module('orionApp.sports', []);
 
 app.controller('SportsCtrl', function($scope, $http) {
+	$http({
+		method: 'GET', 
+		url:'http://theorion.com/wp-json/wp/v2/posts?categories=13&filter[posts_per_page]=12&filter[offset]=12'
+		})
+		.then(function successCallback(response)
+		{
+			$scope.baseball = []; 
+			$scope.baseball = angular.fromJson(response.data); 
+			var imgs = response.data; 
+			for(i=0; i < imgs.length; i++)
+			{
+				var imageJSON = imgs[i]._links['wp:featuredmedia']['0']['href']; 
+				$http({
+					method: 'GET', 
+					url: imageJSON
+				})
+				console.log(imageJSON);
+			}
+		});
   $scope.subsections = [
     {
       link: 'baseball',
@@ -9,7 +28,37 @@ app.controller('SportsCtrl', function($scope, $http) {
     {
       link: 'basketball',
       name: 'BASKETBALL'
+    },
+	  {
+      link: 'crossCountry',
+      name: 'CROSS COUNTRY'
+    },
+	  {
+      link: 'golf',
+      name: 'GOLF'
+    },
+	  {
+      link: 'soccer',
+      name: 'SOCCER'
+    },
+	  {
+      link: 'softball',
+      name: 'SOFTBALL'
+    },	
+	  {
+      link: 'trackAndField',
+      name: 'TRACK AND FIELD'
+    },
+	  {
+      link: 'volleyball',
+      name: 'VOLLEYBALL'
     }
+
+
+
+
+
+
   ];
 
 /*  //baseball

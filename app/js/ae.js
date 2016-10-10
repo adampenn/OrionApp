@@ -1,5 +1,36 @@
 app = angular.module('orionApp.ae', []);
 
+
+app.controller('AeCtrl', function($scope) {
+	$scope.subsections;
+  $scope.subsections = [
+    {
+      link: 'photoOfTheDay',
+      name: 'PHOTO OF THE DAY'
+    },
+    {
+      link: 'previews',
+      name: 'PREVIEWS'
+    },
+    {
+      link: 'humansOfChicoState',
+      name: 'HUMANS OF CHICO STATE'
+    },
+    {
+      link: 'qandas',
+      name: 'Q&As'
+    },
+    {
+      link: 'reviews',
+      name: 'REVIEWS'
+    },
+    {
+      link: 'nebula',
+      name: 'NEBULA'
+    }
+  ];
+});
+/*
 app.controller('AECtrl', function($scope) {
   $scope.stories = [
     {
@@ -14,3 +45,4 @@ app.controller('AECtrl', function($scope) {
     }
   ];
 });
+*/

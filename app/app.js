@@ -3,7 +3,9 @@ app = angular.module('orionApp', [
   'orionApp.news',
   'orionApp.opinion',
   'orionApp.ae',
-  'orionApp.sports'
+  'orionApp.sports', 
+  'orionApp.multimedia', 
+  'orionApp.about'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -25,22 +27,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/story.html'
     })
     .state('news.administration', {
-      url: '/news/administration',
+      url: '/administration',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.community', {
-      url: '/news/comunity',
+      url: '/comunity',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.crime', {
-      url: '/news/crime',
+      url: '/crime',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.policeBlotter', {
-      url: '/news/policeBlotter',
+      url: '/policeBlotter',
       controller: 'NewsCtrl',
       templateUrl: 'views/story.html'
     })
@@ -49,7 +51,37 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'OpinionCtrl',
       templateUrl: 'views/section_nav.html'
     })
-    .state('sports', {
+    .state('opinion.columns', {
+      url: '/columns',
+      controller: 'ColumnsCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+     .state('opinion.blog', {
+      url: '/blog',
+      controller: 'BlogCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+     .state('opinion.comic', {
+      url: '/comic',
+      controller: 'ComicCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+     .state('opinion.illistration', {
+      url: '/illistration',
+      controller: 'IllistrationCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+    .state('opinion.editorials', {
+      url: '/editorials',
+      controller: 'BlogCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+     .state('opinion.blog', {
+      url: '/blog',
+      controller: 'BlogCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+     .state('sports', {
       url: '/sports',
       controller: 'SportsCtrl',
       templateUrl: 'views/section_nav.html'
@@ -59,16 +91,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
     })
-    /*.state('calendar', {
+    .state('calendar', {
       url: '/calendar',
-      controller: 'SportsCtrl',
-      templateUrl: 'views/section_nav.html'
-    })*/
+      templateUrl: 'views/calendar.html'
+    })
     .state('multimedia', {
       url: '/multimedia',
       controller: 'MultimediaCtrl',
       templateUrl: 'views/section_nav.html'
     })
+	  .state('about', {
+      url: '/about',
+      controller: 'AboutCtrl',
+      templateUrl: 'views/section_nav.html'
+    })
+   
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',
