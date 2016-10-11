@@ -76,12 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'BlogCtrl',
       templateUrl: 'views/section_nav.html'
     })
-     .state('opinion.blog', {
-      url: '/blog',
-      controller: 'BlogCtrl',
-      templateUrl: 'views/section_nav.html'
-    })
-     .state('sports', {
+    .state('sports', {
       url: '/sports',
       controller: 'SportsCtrl',
       templateUrl: 'views/section_nav.html'

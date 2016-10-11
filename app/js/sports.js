@@ -7,17 +7,20 @@ app.controller('SportsCtrl', function($scope, $http) {
 		})
 		.then(function successCallback(response)
 		{
-			$scope.baseball = []; 
-			$scope.baseball = angular.fromJson(response.data); 
-			var imgs = response.data; 
-			for(i=0; i < imgs.length; i++)
-			{
-				var imageJSON = imgs[i]._links['wp:featuredmedia']['0']['href']; 
-				$http({
-					method: 'GET', 
-					url: imageJSON
-				})
-				console.log(imageJSON);
+			var stories= angular.fromJson(response.data); 
+			for(i=0; i < stories.length; i++) {
+        (function (stories, i) {
+          if(stories[i]._links['wp:featuredmedia']) {
+				    var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
+			   	  $http({
+		  	  		method: 'GET', 
+	  	  			url: imageJSON
+  		  		})
+		        .then(function successCallback(response) {
+              console.log(response.data.source_url);
+            });
+          }
+        })(stories,i);
 			}
 		});
   $scope.subsections = [
@@ -53,12 +56,6 @@ app.controller('SportsCtrl', function($scope, $http) {
       link: 'volleyball',
       name: 'VOLLEYBALL'
     }
-
-
-
-
-
-
   ];
 
 /*  //baseball
