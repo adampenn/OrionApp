@@ -23,17 +23,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('news.campus', {
       url: '/campus',
-      controller: 'NewsCtrl',
+      controller: 'CampusCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.administration', {
       url: '/administration',
-      controller: 'NewsCtrl',
+      controller: 'AdministrationCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.community', {
       url: '/comunity',
-      controller: 'NewsCtrl',
+    	controller: 'CommunityCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.crime', {
