@@ -1,38 +1,15 @@
 app = angular.module('orionApp.news', ['ui.router']);
 
-app.controller('BreakingCtrl', function($scope, $http) {
-  $http({
-    method: 'GET',
-    url: 'http://theorion.com/wp-json/wp/v2/posts?categories=1955&filter[posts_per_page]=12'
-  })
-  .then(function successCallback(response) {
-    var stories = angular.fromJson(response.data); 
-    for(i=0; i < stories.length; i++) {
-      (function (stories, i) {
-        if(stories[i]._links['wp:featuredmedia']) {
-          var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
-          $http({
-            method: 'GET', 
-            url: imageJSON
-           })
-          .then(function successCallback(response) {
-            stories[i].featruedImage= response.data.source_url;
-            $scope.stories = stories;
-          });
-        }
-      })(stories,i);
-    }
+app.controller('BreakingCtrl', function($scope, stories) {
+  stories.get(1955, function(result) {
+    console.log($scope.stories);
+    $scope.stories = result;  
   });
 });
-app.controller('CampusCtrl', function($scope, $http) 
-{
-	$http({ 
-		method: 'GET', 
-		url: 'http://theorion.com/wp-json/wp/v2/posts?categories=11139&filter[posts_per_page]=310'
-	})
-	.then(function successCallback(response){
-		$scope.stories = response.data; 
-	}); 
+app.controller('CampusCtrl', function($scope, stories) {
+  stories.get(11139, function(result) {
+    $scope.stories = result;  
+  });
 });
 app.controller('AdministrationCtrl', function($scope, $http)
 {

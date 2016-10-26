@@ -154,3 +154,31 @@ app.controller('OrionCtrl', function($scope) {
     }
   ];
 });
+
+app.service('stories', function($http) {
+  this.get = function (id, callback) {
+    $http({
+      method: 'GET',
+      url: 'http://theorion.com/wp-json/wp/v2/posts?categories='+id+'&filter[posts_per_page]=12'
+    })
+    .then(function successCallback(response) {
+      var stories = angular.fromJson(response.data); 
+      for(i=0; i < stories.length; i++) {
+        (function (stories, i) {
+          stories[i].date = new Date(Date.parse(stories[i].date)).toDateString();
+          if(stories[i]._links['wp:featuredmedia']) {
+            var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
+            $http({
+              method: 'GET', 
+              url: imageJSON
+             })
+            .then(function successCallback(response) {
+              stories[i].featuredImage = response.data.source_url;
+              callback(stories);
+            });
+          }
+        })(stories,i);
+      }
+    });
+  }
+});

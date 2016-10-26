@@ -1,16 +1,15 @@
 <div id="stories">
 	<div class="story" ng-repeat='story in stories'>
 		<h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
-		<p class="byline"><a ng-href={{story.link}}>Matthew Manfredi</a></p>
 		<p class="date">{{story.date}}</p>
 		<div ng-if="story.featruedImage == undefined">
 			<p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
 		</div>
-		<div ng-if="story.featruedImage != undefined">
+		<div ng-if="story.featuredImage != undefined">
 			<table class=".double_pane">
 				<tr>
 					<td class=".pane"><p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p></td>
-					<td class=".pane"><img ng-src={{story.featruedImage}} /></td>
+					<td class=".pane"><img ng-src={{story.featuredImage}} /></td>
 				</tr>
 			</table>			
 		</div>
