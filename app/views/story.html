@@ -2,14 +2,14 @@
 	<div class="story" ng-repeat='story in stories'>
 		<h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
 		<p class="date">{{story.date}}</p>
-		<div ng-if="story.featruedImage == undefined">
+		<div ng-hide={{story.featruedImage}}>
 			<p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
 		</div>
-		<div ng-if="story.featuredImage != undefined">
-			<table class=".double_pane">
+		<div ng-show={{story.featruedImage}}>
+			<table class="double_pane">
 				<tr>
-					<td class=".pane"><p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p></td>
-					<td class=".pane"><img ng-src={{story.featuredImage}} /></td>
+					<td class="pane"><p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p></td>
+					<td class="pane"><img ng-src={{story.featuredImage}} /></td>
 				</tr>
 			</table>			
 		</div>
