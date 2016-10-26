@@ -166,6 +166,8 @@ app.service('stories', function($http) {
       for(i=0; i < stories.length; i++) {
         (function (stories, i) {
           stories[i].date = new Date(Date.parse(stories[i].date)).toDateString();
+          pos = stories[i].excerpt.rendered.indexOf('class="pvc_stats "') - 31;
+          stories[i].excerpt.rendered = stories[i].excerpt.rendered.substring(0,pos);
           if(stories[i]._links['wp:featuredmedia']) {
             var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
             $http({
