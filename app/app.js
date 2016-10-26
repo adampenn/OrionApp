@@ -9,12 +9,17 @@ app = angular.module('orionApp', [
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/news');
+  $urlRouterProvider.otherwise('/news/all');
   $stateProvider
     .state('news', {
       url: '/news',
       controller: 'NewsCtrl',
       templateUrl: 'views/section_nav.html'
+    })
+    .state('news.all', {
+      url: '/all',
+      controller:'NewsCtrl',
+      templateUrl: 'views/story.html'
     })
     .state('news.breaking', {
       url: '/breaking',
@@ -116,7 +121,7 @@ app.controller('OrionCtrl', function($scope) {
   };
   $scope.sections = [
     {
-      link: 'news',
+      link: 'news.all',
       name: 'NEWS'
     },
     {

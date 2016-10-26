@@ -1,28 +1,30 @@
 app = angular.module('orionApp.sports', []);
 
 app.controller('SportsCtrl', function($scope, $http) {
-	$http({
-		method: 'GET', 
-		url:'http://theorion.com/wp-json/wp/v2/posts?categories=13&filter[posts_per_page]=12&filter[offset]=12'
-		})
-		.then(function successCallback(response)
-		{
-			var stories= angular.fromJson(response.data); 
-			for(i=0; i < stories.length; i++) {
-        (function (stories, i) {
-          if(stories[i]._links['wp:featuredmedia']) {
-				    var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
-			   	  $http({
-		  	  		method: 'GET', 
-	  	  			url: imageJSON
-  		  		})
-		        .then(function successCallback(response) {
-              console.log(response.data.source_url);
-            });
-          }
-        })(stories,i);
-			}
-		});
+  $http({
+    method: 'GET', 
+    url:'http://theorion.com/wp-json/wp/v2/posts?categories=13&filter[posts_per_page]=12&filter[offset]=12'
+  })
+  .then(function successCallback(response)
+  {
+    var stories = angular.fromJson(response.data); 
+    for(i=0; i < stories.length; i++) {
+      (function (stories, i) {
+        if(stories[i]._links['wp:featuredmedia']) {
+          var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
+          $http({
+            method: 'GET', 
+            url: imageJSON
+           })
+          .then(function successCallback(response) {
+            stories[i].featruedImage= response.data.source_url;
+            console.log(stories);
+	    $scope.stories = stories;
+          });
+        }
+      })(stories,i);
+    }
+  });
   $scope.subsections = [
     {
       link: 'baseball',

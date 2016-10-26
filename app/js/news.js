@@ -1,4 +1,4 @@
-app = angular.module('orionApp.news', []);
+app = angular.module('orionApp.news', ['ui.router']);
 
 app.controller('BreakingCtrl', function($scope, $http) {
   $http({
@@ -6,7 +6,22 @@ app.controller('BreakingCtrl', function($scope, $http) {
     url: 'http://theorion.com/wp-json/wp/v2/posts?categories=1955&filter[posts_per_page]=12'
   })
   .then(function successCallback(response) {
-    $scope.stories = response.data;
+    var stories = angular.fromJson(response.data); 
+    for(i=0; i < stories.length; i++) {
+      (function (stories, i) {
+        if(stories[i]._links['wp:featuredmedia']) {
+          var imageJSON = stories[i]._links['wp:featuredmedia']['0']['href']; 
+          $http({
+            method: 'GET', 
+            url: imageJSON
+           })
+          .then(function successCallback(response) {
+            stories[i].featruedImage= response.data.source_url;
+            $scope.stories = stories;
+          });
+        }
+      })(stories,i);
+    }
   });
 });
 app.controller('CampusCtrl', function($scope, $http) 
@@ -40,7 +55,7 @@ app.controller('CommunityCtrl', function($scope, $http)
 	}); 
 });
 
-app.controller('NewsCtrl', function($scope) {
+app.controller('NewsCtrl', function($scope, $http, $state) {
   $scope.subsections = [
     {
       link: '.breaking',
