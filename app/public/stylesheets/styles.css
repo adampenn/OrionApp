@@ -52,6 +52,14 @@ h1, h2, h3 {
   line-height: .9em;
 }
 
+.double_pane {
+  width: 100%;
+}
+
+.double_pane .pane {
+  width: 50%;
+}
+
 .byline, .date {
   font-style: italic;
   font-size: .8em;
