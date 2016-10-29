@@ -1,5 +1,12 @@
 app = angular.module('orionApp.sports', []);
 
+
+app.controller('BaseballCtrl', function($scope, stories) {
+  stories.get(1955, function(result) {
+    $scope.stories = result;  
+  });
+});
+
 app.controller('SportsCtrl', function($scope, $http) {
   $http({
     method: 'GET', 

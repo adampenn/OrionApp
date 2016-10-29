@@ -81,12 +81,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'BlogCtrl',
       templateUrl: 'views/section_nav.html'
     })
-    .state('sports', {
-      url: '/sports',
-      controller: 'SportsCtrl',
-      templateUrl: 'views/section_nav.html'
-    })
-    .state('ae', {
+   .state('ae', {
       url: '/ae',
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
@@ -105,7 +100,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AboutCtrl',
       templateUrl: 'views/section_nav.html'
     })
-   
+	.state('sports', {
+		url: '/sports', 
+		controller: 'SportsCtrl', 
+		templateUrl: 'views/section_nav.html'
+	}) 
+	.state('sports.baseball', {
+		url: '/baseball', 
+		controller: 'BaseballCtrl', 
+		templateUrl: 'views/story.html'
+	})   
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',
