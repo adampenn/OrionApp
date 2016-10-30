@@ -188,3 +188,9 @@ app.service('stories', function($http) {
     });
   }
 });
+
+app.filter('rawHtml', function($sce){
+  return function(val) {
+    return $sce.trustAsHtml(val);
+  };
+});

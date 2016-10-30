@@ -31,7 +31,10 @@ app.controller('CommunityCtrl', function($scope, $http)
 	}); 
 });
 
-app.controller('NewsCtrl', function($scope, $http, $state) {
+app.controller('NewsCtrl', function($scope, stories, $state) {
+  stories.get(1955, function(result) {
+    $scope.stories = result;  
+  });
   $scope.subsections = [
     {
       link: '.breaking',
