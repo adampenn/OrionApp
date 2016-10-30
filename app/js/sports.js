@@ -2,10 +2,14 @@ app = angular.module('orionApp.sports', []);
 
 
 app.controller('BaseballCtrl', function($scope, stories) {
-  stories.get(1955, function(result) {
-    $scope.stories = result;  
+	$http({
+		method: 'GET',
+		url: 'http://theorion.com/wp-json/wp/v2/posts?categories=1955&filter[posts_per_page]=12&filter[offset]=12'
+	})
+	.then(function successCallback(response) {
+		$scope.stories = response.data; 
+	});
   });
-});
 
 app.controller('SportsCtrl', function($scope, $http) {
   $http({
@@ -66,6 +70,7 @@ app.controller('SportsCtrl', function($scope, $http) {
       name: 'VOLLEYBALL'
     }
   ];
+
 
 /*  //baseball
   $http({
