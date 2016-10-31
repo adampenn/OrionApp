@@ -1,22 +1,20 @@
-app = angular.module('orionApp.opinion', []);
-app.controller('BlogCtrl', function($scope, $http) {
-  $http({
-    method: 'GET',
-    url: 'http://theorion.com/wp-json/wp/v2/posts?categories=102&filter[posts_per_page]=12'
-  })
-  .then(function successCallback(response) {
-    $scope.stories = response.data;
-  });
-});
-app.controller('OpinionCtrl', function($scope) {
-  $scope.subsection;
+app = angular.module('orionApp.opinion', ['ui.router']);
+
+app.controller('ColumnsCtrl', function($scope, stories) {
+	stories.get(8, function(result) {
+		$scope.stories = result; 
+	});
+}); 
+	
+
+app.controller('OpinionCtrl', function($scope, stories, $state) {
   $scope.subsections = [
     {
       link: 'blogs',
       name: 'BLOGS'
     },
     {
-      link: 'columns',
+      link: '.columns',
       name: 'COLUMNS'
     },
     {
