@@ -56,6 +56,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'OpinionCtrl',
       templateUrl: 'views/section_nav.html'
     })
+    .state('opinion.all', {
+      url: '/all',
+      controller: 'OpinionCtrl',
+      templateUrl: 'views/story.html'
+    })
     .state('opinion.columns', {
       url: '/columns',
       controller: 'ColumnsCtrl',
@@ -86,6 +91,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/section_nav.html'
     })
+   .state('ae.all', {
+      url: '/all',
+      controller: 'AeCtrl',
+      templateUrl: 'views/story.html'
+    })
     .state('calendar', {
       url: '/calendar',
       templateUrl: 'views/calendar.html'
@@ -100,16 +110,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AboutCtrl',
       templateUrl: 'views/section_nav.html'
     })
-	.state('sports', {
+  	.state('sports', {
 		url: '/sports', 
 		controller: 'SportsCtrl', 
 		templateUrl: 'views/section_nav.html'
-	}) 
-	.state('sports.baseball', {
-		url: '/baseball', 
-		controller: 'BaseballCtrl', 
+  	}) 
+  	.state('sports.all', {
+		url: '/all', 
+		controller: 'SportsCtrl', 
 		templateUrl: 'views/story.html'
-	})   
+  	}) 
+  	.state('sports.baseball', {
+  		url: '/baseball', 
+  		controller: 'BaseballCtrl', 
+  		templateUrl: 'views/story.html'
+  	})   
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',
@@ -129,15 +144,15 @@ app.controller('OrionCtrl', function($scope) {
       name: 'NEWS'
     },
     {
-      link: 'opinion',
+      link: 'opinion.all',
       name: 'OPINION'
     },
     {
-      link: 'sports',
+      link: 'sports.all',
       name: 'SPORTS'
     },
     {
-      link: 'ae',
+      link: 'ae.all',
       name: 'A&E'
     },
     {
@@ -182,7 +197,9 @@ app.service('stories', function($http) {
               stories[i].featuredImage = response.data.source_url;
               callback(stories);
             });
-          }
+          } else {
+            stories[i].featuredImage = null;
+	  }
         })(stories,i);
       }
     });

@@ -7,41 +7,41 @@ app.controller('BaseballCtrl', function($scope, stories) {
   });
 });
 
-app.controller('SportsCtrl', function($scope, $http) {
+app.controller('SportsCtrl', function($scope, stories) {
   stories.get(1955, function(result) {
     $scope.stories = result;  
   });
   $scope.subsections = [
     {
-      link: 'baseball',
+      link: '.baseball',
       name: 'BASEBALL'
     },
     {
-      link: 'basketball',
+      link: '.basketball',
       name: 'BASKETBALL'
     },
 	  {
-      link: 'crossCountry',
+      link: '.crossCountry',
       name: 'CROSS COUNTRY'
     },
 	  {
-      link: 'golf',
+      link: '.golf',
       name: 'GOLF'
     },
 	  {
-      link: 'soccer',
+      link: '.soccer',
       name: 'SOCCER'
     },
 	  {
-      link: 'softball',
+      link: '.softball',
       name: 'SOFTBALL'
     },	
 	  {
-      link: 'trackAndField',
+      link: '.trackAndField',
       name: 'TRACK AND FIELD'
     },
 	  {
-      link: 'volleyball',
+      link: '.volleyball',
       name: 'VOLLEYBALL'
     }
   ];

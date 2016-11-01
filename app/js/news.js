@@ -1,7 +1,7 @@
 app = angular.module('orionApp.news', ['ui.router']);
 
 app.controller('BreakingCtrl', function($scope, stories) {
-  stories.get(1955, function(result) {
+  stories.get(132, function(result) {
     $scope.stories = result;  
   });
 });

@@ -1,17 +1,16 @@
 <div id="stories">
-	<div class="story" ng-repeat='story in stories'>
-		<h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
-		<p class="date">{{story.date}}</p>
-		<div ng-hide={{story.featuredImage}}>
-			<p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
-		</div>
-		<div ng-show={{story.featuredImage}}>
-			<table class="double_pane">
-				<tr>
-					<td class="pane"><p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p></td>
-					<td class="pane"><img ng-src={{story.featuredImage}} /></td>
-				</tr>
-			</table>			
-		</div>
-	</div>
+  <div class="story" ng-repeat='story in stories'>
+    <h2 class="title" ng-bind-html='story.title.rendered | rawHtml'></h2>
+    <p class="date">{{story.date}}</p>
+    <table class="double_pane">
+      <tr>
+        <td class="pane">
+          <p class="desc" ng-bind-html="story.excerpt.rendered | rawHtml"></p>
+			  </td>
+        <td ng-show="story.featuredImage" class="pane">
+          <img ng-src={{story.featuredImage}} />
+	      </td>
+      </tr>
+    </table>			
+  </div>
 </div>
