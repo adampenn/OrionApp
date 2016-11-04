@@ -96,6 +96,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AeCtrl',
       templateUrl: 'views/story.html'
     })
+	.state('ae.previews', { 
+	  url: '/previews', 
+	  controller: 'AePreviews',	
+	  templateUrl: 'views/story.html'
+	})
     .state('calendar', {
       url: '/calendar',
       templateUrl: 'views/calendar.html'

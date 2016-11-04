@@ -1,15 +1,22 @@
-app = angular.module('orionApp.ae', []);
+app = angular.module('orionApp.ae', ['ui.router']);
 
+
+app.controller('AePreviews', function($scope, stories)
+{
+	stories.get(588, function(result) {
+		$scope.stories = result; 
+	}); 
+});
 
 app.controller('AeCtrl', function($scope) {
-	$scope.subsections;
+  $scope.subsections;
   $scope.subsections = [
     {
       link: 'photoOfTheDay',
       name: 'PHOTO OF THE DAY'
     },
     {
-      link: 'previews',
+      link: '.previews',
       name: 'PREVIEWS'
     },
     {
