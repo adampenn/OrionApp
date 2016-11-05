@@ -48,7 +48,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('news.policeBlotter', {
       url: '/policeBlotter',
-      controller: 'NewsCtrl',
+      controller: 'PolBloCtrl',
       templateUrl: 'views/story.html'
     })
     .state('opinion', {
@@ -101,6 +101,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	  controller: 'AePreviews',	
 	  templateUrl: 'views/story.html'
 	})
+	.state('ae.humans', { 
+	  url: '/humans', 
+	  controller: 'AeHumans', 
+	  templateUrl: 'views/story.html'
+	})
+	.state('ae.reviews', {
+		url:'/reviews', 
+		controller: 'AeReviews', 
+		templateUrl: 'views/story.html'
+	})
     .state('calendar', {
       url: '/calendar',
       templateUrl: 'views/calendar.html'
@@ -110,11 +120,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'MultimediaCtrl',
       templateUrl: 'views/section_nav.html'
     })
-	  .state('about', {
+	.state('multimedia.all', {
+		url: '/all', 
+		controller: 'MultimediaCtrl',	
+		templateUrl: 'views/story.html'
+	})
+	.state('multimedia.photoGalleries', { 
+		url: '/photoGalleries', 
+		controller: 'photoGalleriesCtrl',
+		templateUrl: 'views/story.html'
+	})
+	.state('about', {
       url: '/about',
       controller: 'AboutCtrl',
       templateUrl: 'views/section_nav.html'
     })
+	.state('about.archives', {
+		url: '/archives', 
+		controller: 'ArchivesCtrl', 
+		templateUrl: 'views/story.html'
+	})
   	.state('sports', {
 		url: '/sports', 
 		controller: 'SportsCtrl', 
@@ -130,6 +155,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
   		controller: 'BaseballCtrl', 
   		templateUrl: 'views/story.html'
   	})   
+	.state('sports.golf', { 
+		url:'/golf', 
+		controller: 'GolfCtrl', 
+		templateUrl: 'views/story.html'
+	})
+	.state('sports.softball', {
+		url: '/softball', 
+		controller: 'SoftballCtrl', 
+		templateUrl: 'views/story.html'
+	})
+	.state('sports.trackAndField', { 
+
+		url: '/trackAndField', 
+		controller: 'TrackCtrl', 
+		templateUrl: 'views/story.html'
+	})
+	.state('sports.basketball', { 
+		url: '/basketball', 
+		controller: 'BasketballCtrl', 
+		templateUrl: 'views/story.html'
+	}) 
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',

@@ -1,4 +1,11 @@
 app = angular.module('orionApp.about', []);
+
+app.controller('ArchivesCtrl', function($scope, stories) {
+	stories.get(1760, function(result) {
+		$scope.stories = result; 
+	}); 
+}); 
+
 app.controller('AboutCtrl', function($scope) {
   $scope.subsection;
   $scope.subsections = [
@@ -27,7 +34,7 @@ app.controller('AboutCtrl', function($scope) {
       name: 'CONTACT US'
     }, 
 		{
-      link: 'archives',
+      link: '.archives',
       name: 'ARCHIVES'
     }, 
 		{

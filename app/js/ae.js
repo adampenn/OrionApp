@@ -8,11 +8,24 @@ app.controller('AePreviews', function($scope, stories)
 	}); 
 });
 
+app.controller('AeReviews', function($scope, stories) 
+{
+	stories.get(586, function(result) {
+		$scope.stories = result;
+	});
+}); 
+
+app.controller('AeHumans', function($scope, stories)
+{
+	stories.get(2, function(result) {
+		$scope.stories = result; 
+	}); 
+});
 app.controller('AeCtrl', function($scope) {
   $scope.subsections;
   $scope.subsections = [
     {
-      link: 'photoOfTheDay',
+      link: '.photoOfTheDay',
       name: 'PHOTO OF THE DAY'
     },
     {
@@ -20,7 +33,7 @@ app.controller('AeCtrl', function($scope) {
       name: 'PREVIEWS'
     },
     {
-      link: 'humansOfChicoState',
+      link: '.humans',
       name: 'HUMANS OF CHICO STATE'
     },
     {
@@ -28,7 +41,7 @@ app.controller('AeCtrl', function($scope) {
       name: 'Q&As'
     },
     {
-      link: 'reviews',
+      link: '.reviews',
       name: 'REVIEWS'
     },
     {

@@ -31,6 +31,13 @@ app.controller('CommunityCtrl', function($scope, $http)
 	}); 
 });
 
+app.controller('PolBloCtrl', function($scope, stories)
+{
+	stories.get(283, function(result) {
+		$scope.stories = result; 
+	});
+});
+
 app.controller('NewsCtrl', function($scope, stories, $state) {
   stories.get(1955, function(result) {
     $scope.stories = result;  

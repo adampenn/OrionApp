@@ -7,11 +7,31 @@ app.controller('BaseballCtrl', function($scope, stories) {
   });
 });
 
+app.controller('GolfCtrl', function($scope, stories) {
+	stories.get(1957, function(result) {
+		$scope.stories = result;
+	}); 
+});
+app.controller('SoftballCtrl', function($scope, stories) {
+	stories.get(573, function(result) {
+	$scope.stories = result;
+	}); 
+});
+
+app.controller('TrackCtrl', function($scope, stories) {
+	stories.get(1956, function(result) {
+	$scope.stories = result; 
+	}); 
+}); 
+
+app.controller('BasketballCtrl', function($scope, stories) {
+	stories.get(1953, function(result) {
+	$scope.stories = result; 
+	}); 
+}); 
 app.controller('SportsCtrl', function($scope, stories) {
-  stories.get(1955, function(result) {
-    $scope.stories = result;  
-  });
-  $scope.subsections = [
+	
+    $scope.subsections = [
     {
       link: '.baseball',
       name: 'BASEBALL'

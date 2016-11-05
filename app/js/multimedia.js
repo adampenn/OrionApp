@@ -1,9 +1,14 @@
-app = angular.module('orionApp.multimedia', []);
-app.controller('MultimediaCtrl', function($scope) {
-  $scope.subsection;
+app = angular.module('orionApp.multimedia', ['ui.router']);
+
+app.controller('photoGalleriesCtrl', function($scope, stories) {
+	stories.get(231, function(result) {
+	$scope.stories = result; 
+	});
+}); 
+app.controller('MultimediaCtrl', function($scope, stories, $state) {
   $scope.subsections = [
     {
-      link: 'photoGalleries',
+      link: '.photoGalleries',
       name: 'PHOTO GALLERIES'
     },
 	  {
