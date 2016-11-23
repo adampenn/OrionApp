@@ -10,25 +10,18 @@ app.controller('CampusCtrl', function($scope, stories) {
     $scope.stories = result;  
   });
 });
-app.controller('AdministrationCtrl', function($scope, $http)
+app.controller('AdministrationCtrl', function($scope, stories)
 {
-	$http({
-			method: 'GET', 
-			url: 'http://theorion.com/wp-json/wp/v2/posts?categories=132&filter[posts_per_page]=12'
-		})
-		.then(function successCallback(response){
-			$scope.stories = response.data; 
-		}); 
+  stories.get(5968, function(result) {
+    $scope.stories = result;  
+  });
 });
 app.controller('CommunityCtrl', function($scope, $http) 
 {
-	$http({ 
-		method: 'GET', 
-		url: 'http://theorion.com/wp-json/wp/v2/posts?categories=7660&filter[posts_per_page]=310'
-	})
-	.then(function successCallback(response){
-		$scope.stories = response.data; 
-	}); 
+  stories.get(7660, function(result) {
+    $scope.stories = result;  
+  });
+
 });
 
 app.controller('PolBloCtrl', function($scope, stories)
@@ -38,6 +31,12 @@ app.controller('PolBloCtrl', function($scope, stories)
 	});
 });
 
+app.controller('CrimeCtrl', function($scope, stories) 
+{
+	stories.get(5969, function(result) { 
+		$scope.stories = result; 
+	});
+}); 
 app.controller('NewsCtrl', function($scope, stories, $state) {
   stories.get(1955, function(result) {
     $scope.stories = result;  

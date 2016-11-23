@@ -43,7 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('news.crime', {
       url: '/crime',
-      controller: 'NewsCtrl',
+      controller: 'CrimeCtrl',
       templateUrl: 'views/story.html'
     })
     .state('news.policeBlotter', {
@@ -64,28 +64,33 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('opinion.columns', {
       url: '/columns',
       controller: 'ColumnsCtrl',
-      templateUrl: 'views/section_nav.html'
+      templateUrl: 'views/story.html'
     })
      .state('opinion.blog', {
       url: '/blog',
-      controller: 'BlogCtrl',
-      templateUrl: 'views/section_nav.html'
+      controller: 'BlogsCtrl',
+      templateUrl: 'views/story.html'
     })
      .state('opinion.comic', {
       url: '/comic',
       controller: 'ComicCtrl',
-      templateUrl: 'views/section_nav.html'
+      templateUrl: 'views/story.html'
     })
-     .state('opinion.illistration', {
+     .state('opinion.editorial', {
       url: '/illistration',
-      controller: 'IllistrationCtrl',
-      templateUrl: 'views/section_nav.html'
+      controller: 'EditorCtrl',
+      templateUrl: 'views/story.html'
     })
     .state('opinion.editorials', {
       url: '/editorials',
-      controller: 'BlogCtrl',
-      templateUrl: 'views/section_nav.html'
+      controller: 'EditorialCtrl',
+      templateUrl: 'views/story.html'
     })
+	.state('opinion.tweetTalks', { 
+		url: '/tweetTalks', 
+		controller: 'TweetCtrl', 
+		templateUrl: 'views/story.html'
+	})
    .state('ae', {
       url: '/ae',
       controller: 'AeCtrl',
@@ -106,10 +111,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	  controller: 'AeHumans', 
 	  templateUrl: 'views/story.html'
 	})
+	.state('ae.quandas', { 
+		url: '/qandas', 
+		controller: 'AeQA', 
+		templateUrl: 'views/story.html'
+	})
 	.state('ae.reviews', {
 		url:'/reviews', 
 		controller: 'AeReviews', 
 		templateUrl: 'views/story.html'
+	})
+	.state('ae.nebula', { 
+		url:'/nebula', 
+		controller: 'AeNebula', 
+		templateUrl: 'view/story.html'
 	})
     .state('calendar', {
       url: '/calendar',
@@ -128,6 +143,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	.state('multimedia.photoGalleries', { 
 		url: '/photoGalleries', 
 		controller: 'photoGalleriesCtrl',
+		templateUrl: 'views/story.html'
+	})
+	.state('multimedia.printEdition', {
+		url: '/printEdition', 
+		controller: 'printEditionCtrl', 
+		templateUrl: 'views/story.html'
+	})
+	.state('multimedia.video', { 
+		url: '/video', 
+		controller: 'VideoCtrl', 
 		templateUrl: 'views/story.html'
 	})
 	.state('about', {
@@ -150,6 +175,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'SportsCtrl', 
 		templateUrl: 'views/story.html'
   	}) 
+	.state('sports.volleyball', { 
+		url: '/volleyball', 
+		controller: 'VolleyballCtrl', 
+		templateUrl: 'views/story.html'
+	})
   	.state('sports.baseball', {
   		url: '/baseball', 
   		controller: 'BaseballCtrl', 
@@ -165,6 +195,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'SoftballCtrl', 
 		templateUrl: 'views/story.html'
 	})
+	.state('sports.crossCountry', { 
+		url: '/crossCountry', 
+		controller: 'XCountryCtrl', 
+		templateUrl: 'views/story.html'
+	})
 	.state('sports.trackAndField', { 
 
 		url: '/trackAndField', 
@@ -176,6 +211,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'BasketballCtrl', 
 		templateUrl: 'views/story.html'
 	}) 
+	.state('sports.soccer', { 
+		url: '/soccer', 
+		controller: 'SoccerCtrl', 
+		templateUrl: 'views/story.html'
+	})
     /*(.state('classifieds', {
       url: '/classifieds',
       controller: 'SportsCtrl',

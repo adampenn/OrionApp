@@ -29,6 +29,25 @@ app.controller('BasketballCtrl', function($scope, stories) {
 	$scope.stories = result; 
 	}); 
 }); 
+
+app.controller('SoccerCtrl', function($scope, stories) {
+	stories.get(5383, function(result) {
+		$scope.stores = result; 
+	}); 
+});
+
+app.controller('XCountryCtrl', function($scope, stories) {
+	stories.get(5385, function(result) {
+		$scope.stories = result; 
+	}); 
+});
+
+app.controller('VolleyballCtrl', function($scope, stories) {
+	stories.get(5384, function(result) {
+		$scope.stories = result; 
+	}); 
+});
+
 app.controller('SportsCtrl', function($scope, stories) {
 	
     $scope.subsections = [

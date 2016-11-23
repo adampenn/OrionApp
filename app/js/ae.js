@@ -21,6 +21,27 @@ app.controller('AeHumans', function($scope, stories)
 		$scope.stories = result; 
 	}); 
 });
+
+app.controller('AeQA', function($scope, stories) 
+{
+	stories.get(6281, function(result) {
+		$scope.stories = result; 
+	}); 
+});
+
+app.controller('AeCampus', function($scope, stories) 
+{
+	stories.get(11135, function(result) {
+		$scope.stories = result; 
+	}); 
+});
+
+app.controller('AeNebula', function($scope, stories) 
+{
+	stories.get(11502, function(result) { 
+		$scope.stories = result; 
+	}); 
+});
 app.controller('AeCtrl', function($scope) {
   $scope.subsections;
   $scope.subsections = [
@@ -37,7 +58,7 @@ app.controller('AeCtrl', function($scope) {
       name: 'HUMANS OF CHICO STATE'
     },
     {
-      link: 'qandas',
+      link: '.quandas',
       name: 'Q&As'
     },
     {
@@ -45,7 +66,7 @@ app.controller('AeCtrl', function($scope) {
       name: 'REVIEWS'
     },
     {
-      link: 'nebula',
+      link: '.nebula',
       name: 'NEBULA'
     }
   ];
